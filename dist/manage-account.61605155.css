@@ -1,0 +1,21 @@
+h2{
+    color: blue;
+    text-align: center;
+}
+main{
+    justify-content: center;
+    width: 850px;
+    margin: 4%;
+}
+table, th, td{
+    border: 1px solid black;
+    padding: 2px;
+}
+label{
+    color: red;
+    padding: 2%;
+}
+table{
+    align-content: center;
+}
+/*# sourceMappingURL=manage-account.61605155.css.map */
