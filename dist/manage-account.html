@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JPS-AG</title>
-    <link rel="stylesheet" href="/manage-account.61605155.css">
+    <link rel="stylesheet" href="style1.css" />
   </head>
   <body>
-    <a href="/index.html">Back to System Comptable</a>
+    <a href="index.html">Back</a>
 
     <h2>Manage Accounts</h2>
     <main>
@@ -16,11 +16,11 @@
         <legend>Account</legend>
         <form>
           <label>Code</label>
-          <input type="text" id="code">
+          <input type="text" id="code" />
           <label>Label</label>
-          <input type="text" id="label">
+          <input type="text" id="label" />
           <label>Class</label>
-          <select id="select">
+          <select id="class">
             <option>4 Tiers</option>
             <option>4 Tiers</option>
             <option>7 Produits</option>
@@ -31,17 +31,63 @@
           <button id="myButton" onclick="add()">ADD</button>
         </form>
       </fieldset>
+      <br />
+      <table id="ThisTable">
+        <thead>
+          <th>Code</th>
+          <th>Label</th>
+          <th>Class</th>
+        </thead>
+        <tbody id="liste"></tbody>
+      </table>
+    </main>
+    <script src="account.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPS-AG</title>
+    <link rel="stylesheet" href="/manage-account.61605155.css">
+  </head>
+
+  <body>
+    <a href="/index.html">Back to System Comptable</a>
+
+    <h2>Manage Accounts</h2>
+    <main>
+      <fieldset>
+        <legend>Account</legend>
+        <form onsubmit="false">
+          <label>Code</label>
+          <input type="text" id="code">
+          <label>Label</label>
+          <input type="text" id="label">
+          <label>Class</label>
+          <select id="classe">
+            <option value="4 Tiers">4 Tiers</option>
+            <option value="4 Tiers">4 Tiers</option>
+            <option value="7 Produits">7 Produits</option>
+            <option value="6 Charges">6 Charges</option>
+            <option value="5 Tresoreri">5 Tresoreri</option>
+          </select>
+          <span style="color: red" id="error"></span>
+          <button id="myButton">ADD</button>
+        </form>
+      </fieldset>
       <br>
-      <div id="Table">
-        <table id="ThisTable">
-          <thead>
-            <th>Code</th>
-            <th>Label</th>
-            <th>Class</th>
-          </thead>
-          <tbody id="liste"></tbody>
-        </table>
-      </div>
+
+      <table border="2" id="ThisTable">
+        <thead>
+          <th>Code</th>
+          <th>Label</th>
+          <th>Class</th>
+        </thead>
+        <tbody id="Liste"></tbody>
+      </table>
     </main>
     <script src="/manage-account.79e337b5.js"></script>
   </body>
