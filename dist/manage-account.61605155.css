@@ -1,6 +1,9 @@
-h2{
+h2 {
     color: blue;
     text-align: center;
+}
+h2:hover{
+    color: darkgoldenrod;
 }
 main{
     justify-content: center;
@@ -17,5 +20,8 @@ label{
 }
 table{
     align-content: center;
+}
+thead{
+    background-color: cyan;
 }
 /*# sourceMappingURL=manage-account.61605155.css.map */

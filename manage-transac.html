@@ -12,47 +12,40 @@
     <h2>Manage Transactions</h2>
     <main>
       <fieldset>
-        <legend>Transaction :</legend>
+        <legend><em>Transaction :</em></legend>
         <form>
           <label>Transaction Date</label>
-          <input type="date" value="/ /" />
+          <input id="t-d" type="date" value="/ /" />
           <label>Transaction Object</label>
-          <input type="text" value="description of Transaction" />
+          <input id="t-o" type="text" value="description of Transaction" />
           <br />
           <br />
           <label>Code</label>
-          <input type="text" value="Code" />
+          <input id="code" type="text" value="Code" />
           <label>Label</label>
-          <input type="text" value="Label" />
+          <input id="label" type="text" value="Label" />
           <label>Debit</label>
-          <input type="number" value="oMount" />
+          <input id="debit" type="number" value="oMount" />
           <br />
           <br />
           <label>Credit</label>
-          <input type="number" value="oMount" />
-          <input type="button" value="ADD" />
+          <input id="credit" type="number" value="oMount" />
+          <button id="myButton">ADD</button>
         </form>
       </fieldset>
       <br />
       <table>
         <thead>
           <th>Transaction Date</th>
-          <th>Account Code</th>
-          <th>Account Code (Credit)</th>
           <th>Transaction Object</th>
+          <th>Code</th>
+          <th>Label</th>
           <th>Debit</th>
           <th>Credit</th>
         </thead>
-        <tbody>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tbody>
+        <tbody id="Liste"></tbody>
       </table>
     </main>
-    <script></script>
+    <script src="transaction.js"></script>
   </body>
 </html>

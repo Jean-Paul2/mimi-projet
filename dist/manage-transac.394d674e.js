@@ -7,39 +7,31 @@ const debitInput = document.querySelector("#debit");
 const creditInput = document.querySelector("#credit");
 const tbody = document.getElementById("Liste");
 const err = document.querySelector("#error");
-let transactiondate, transactionobject, code, label, debit, credit;
-
+let transactiondate1, transactionobject1, code1, label1, debit1, credit1;
 // Variable de stockage
 let LIST = [], id;
 let data = localStorage.listeCompte;
-
-
 //Verifier si le localStorage contient des donnees et
 //Chargement des données sur une Table de la page
-
 function getValue() {
     if (data) {
         LIST = JSON.parse(data);
         id = LIST.length;
         tableList(LIST);
-        // list ==> [{key:value, key:value, key:value},{}, .....,{}]
+    // list ==> [{key:value, key:value, key:value},{}, .....,{}]
     } else {
         LIST = [];
         id = 0;
     }
 }
-
 getValue();
-
 function tableList(array) {
-    array.forEach(function (item) {
-        addDataToTable(item.transactiondate, item.transactionobject, item.code, item.label, item.debit, item.credit)
+    array.forEach(function(item) {
+        addDataToTable(item.transactiondate, item.transactionobject, item.code, item.label, item.debit, item.credit);
     });
 }
-
 //Fonction D'ajout de donnes storage dans la table de la page
 function addDataToTable(transactiondate, transactionobject, code, label, debit, credit) {
-
     const row = tbody.insertRow(-1);
     const cell1 = row.insertCell(0);
     const cell2 = row.insertCell(1);
@@ -55,52 +47,45 @@ function addDataToTable(transactiondate, transactionobject, code, label, debit, 
     cell2.textContent = debit;
     cell3.textContent = credit;
 }
-
 //écoute sur l'élément input d'ID 'int'
-
-transactiondateInput.addEventListener('change', (e) => {
-    code = e.target.value;
-    console.log(transactiondate);
-})
-transactionobjectInput.addEventListener('change', (f) => {
-    label = f.target.value;
-    console.log(transactionobject);
-})
-codeInput.addEventListener('change', (e) => {
+transactiondateInput.addEventListener('change', (e)=>{
+    code1 = e.target.value;
+    console.log(transactiondate1);
+});
+transactionobjectInput.addEventListener('change', (f)=>{
+    label1 = f.target.value;
+    console.log(transactionobject1);
+});
+codeInput.addEventListener('change', (e)=>{
     classe = e.target.value;
-    console.log(code);
-})
-labelInput.addEventListener('change', (e) => {
-    code = e.target.value;
-    console.log(label);
-})
-debitInput.addEventListener('change', (f) => {
-    label = f.target.value;
-    console.log(debit);
-})
-creditInput.addEventListener('change', (e) => {
+    console.log(code1);
+});
+labelInput.addEventListener('change', (e)=>{
+    code1 = e.target.value;
+    console.log(label1);
+});
+debitInput.addEventListener('change', (f)=>{
+    label1 = f.target.value;
+    console.log(debit1);
+});
+creditInput.addEventListener('change', (e)=>{
     classe = e.target.value;
-    console.log(credit);
-})
-myButton.addEventListener('click', function () {
+    console.log(credit1);
+});
+myButton.addEventListener('click', function() {
     if (transactiondateInput.value && transactionobjectInput.value && codeInput.value && labelInput.value && debitInput.value && creditInput.value) {
         addDataToTable();
-
         LIST.push({
-            transactiondate: transactiondate,
-            transactionobject: transactionobject,
-            code: code,
-            label: label,
-            debit: debit,
-            credit: credit
+            transactiondate: transactiondate1,
+            transactionobject: transactionobject1,
+            code: code1,
+            label: label1,
+            debit: debit1,
+            credit: credit1
         });
-
         localStorage.setItem('listeCompte', JSON.stringify(LIST));
         id++;
-    }
-    else {
-        err.textContent = "Veuiller remplir tous les champs"
-    }
+    } else err.textContent = "Veuiller remplir tous les champs";
     //réinitialisation des valeurs pour que le champ required déclaré au niveau
     //de notre html ne se retrouve pas avec une valeur, créant ainsi un probléme
     //lors de l'affichage.
@@ -111,3 +96,5 @@ myButton.addEventListener('click', function () {
     debitInput.value = "";
     creditInput.value = "";
 });
+
+//# sourceMappingURL=manage-transac.394d674e.js.map
